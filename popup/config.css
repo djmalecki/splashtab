@@ -1,0 +1,17 @@
+body {
+  font-family: Arial, sans-serif;
+  overflow: auto;
+}
+
+hr {
+  color: white;
+}
+
+.column {
+  float: left;
+  padding: 2%;
+}
+
+.header {
+  font-size: 1.6em;
+}

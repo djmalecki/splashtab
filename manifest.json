@@ -1,0 +1,22 @@
+{
+
+  "manifest_version": 2,
+  "name": "Splashtab",
+  "version": "0.1",
+
+  "description": "Shows a clean photograph on a new tab",
+  "chrome_url_overrides" : {
+    "newtab": "splashtab.html"
+  },
+
+  "icons": {
+    "48": "icons/ic_photo_camera_black_48px.svg",
+    "98": "icons/ic_photo_camera_black_48px.svg"
+  },
+
+  "browser_action": {
+    "default_icon": "icons/ic_photo_camera_black_48px.svg",
+    "default_title": "Splashtab",
+    "default_popup": "popup/config.html"
+  }
+}
