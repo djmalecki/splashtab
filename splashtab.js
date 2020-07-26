@@ -1,38 +1,33 @@
 window.onload = onLoad;
 
 function onLoad() {
-  var resolution = window.screen.width * window.devicePixelRatio + "x" + window.screen.height * window.devicePixelRatio;
+  var URL = buildURL();
 
-  //var URL = getImage();
-  var URL = "https://source.unsplash.com/random/" + resolution;
   document.body.style.background = 'url(' + URL + ') no-repeat center center fixed';
 }
 
 
-function getImage() {
-  //get user prefs res' from localStorage
-  var resString = localStorage.getItem("resPref");
+function buildURL() {
+  var resX = window.screen.width * window.devicePixelRatio;
+  var resY = window.screen.height * window.devicePixelRatio;
 
-  //split string into array
-  var resArray = resString.split("/");
-
-  //get length of array
-  var numberOfRes = resArray.length - 1;
-
-  if (numberOfRes < 1) {
-    return "https://source.unsplash.com/random/1920x1080";
+  //attempt to get preferred resolution from localStorage
+  try {
+    var resPrefX = localStorage.getItem("resPrefX");
+    var resPrefY = localStorage.getItem("resPrefY");
+  } catch(error) {
+    console.log(error)
   }
 
-  //chose random number based on array length
-  var randIndex = randomNumber(numberOfRes);
+  if (!!resPrefX && !!resPrefY) {
+    resX = resPrefX;
+    resY = resPrefY;
+  } else {
+    localStorage.setItem("resPrefX", resX);
+    localStorage.setItem("resPrefY", resY);
+  }
 
-  //use random number as index to select resolution and return address string
-  var selectRes = resArray[randIndex];
+  console.log("SPLASHTAB: splashtab.js: Using resolution " + resX + "x" + resY);
 
-  return "https://source.unsplash.com/random/" + selectRes;
-
-}
-
-function randomNumber(numberOfRes) {
-  return Math.floor(Math.random() * (numberOfRes));
+  return "https://source.unsplash.com/random/" + resX + "x" + resY;
 }

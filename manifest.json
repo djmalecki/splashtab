@@ -1,8 +1,8 @@
 {
 
-  "manifest_version": 2,
+  "manifest_version": 10,
   "name": "Splashtab",
-  "version": "0.1",
+  "version": "0.7",
 
   "description": "Shows a clean photograph on a new tab",
   "chrome_url_overrides" : {
