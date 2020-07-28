@@ -5,23 +5,46 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="config.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Karla&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="header">
-    <p>Splashtab v0.8</p>
+    <p>Splashtab</p>
   </div>
-  <div>
-    <label>Custom resolution:</label>
-    <input type="number" id="resX"> x <input type="number" id="resY">
+  <div class="card">
+    <p class="header2">Preferences</p>
+    <div class="text-left">
+      <div>
+        <label>Custom resolution:</label>
+        <input type="number" id="resX" class="w10 input"> x <input type="number" id="resY" class="w10 input">
+      </div>
+      <br />
+      <div>
+        <label>Custom tags:</label>
+        <input id="tags" class="input fill-width" type="text">
+      </div>
+      <p id="saveNotify"></p>
+    </div>
   </div>
-  <br />
-  <div class="full-width">
-    <label class="width30">Custom tags:</label>
-    <input id="tags" class="full-width" type="text">
+  <br>
+  <div class="card">
+    <p class="header2">Help</p>
+    <div class="text-left">
+      <p>Your preferences are saved automatically.</p>
+      <hr>
+      <p>Resolution</p>
+      <p class="text-small">By default, splashtab uses your screen resolution to chose photos.</p>
+      <p class="text-small">If you would like to use a different resolution, you can type one in the preferences section
+        above.</p>
+      <hr>
+      <p>Tags</p>
+      <p class="text-small">If you would like to see more specific images, you can enter custom tags above.</p>
+      <p class="text-small">Separate each tag with a comma, for example: 'landscape, nature'</p>
+    </div>
   </div>
+  <br>
 
-  <p id="saveNotify"></p>
   <script src="config.js"></script>
 </body>
 

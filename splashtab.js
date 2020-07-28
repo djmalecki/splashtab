@@ -46,12 +46,18 @@ function buildURL() {
     localStorage.setItem("resPrefY", resY);
   }
 
+  console.log("SPLASHTAB: splashtab.js: Using resolution " + resX + "x" + resY);
+  
+  var URL = "https://source.unsplash.com/random/" + resX + "x" + resY;
+
   var tags = fetchTags();
 
-  console.log("SPLASHTAB: splashtab.js: Using resolution " + resX + "x" + resY);
-  console.log("SPLASHTAB: splashtab.js: Using tags " + tags);
+  if (!!tags) {
+    console.log("SPLASHTAB: splashtab.js: Using tags " + tags);
+    URL += "/?" + tags;
+  }
 
-  return "https://source.unsplash.com/featured/" + resX + "x" + resY + "/?" + tags;
+  return URL;
 }
 
 function fetchTags() {
@@ -63,7 +69,9 @@ function fetchTags() {
     console.log(error);
   }
 
-  tags = tags.toString().toLowerCase().replace(/\s/g, '');
+  if (!!tags) {
+    tags = tags.toString().toLowerCase().replace(/\s/g, '');
+  }
 
   return tags;
 }
