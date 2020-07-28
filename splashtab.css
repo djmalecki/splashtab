@@ -3,4 +3,24 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  cursor: pointer;
+}
+
+#blackCover {
+  background-color: black;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background-color 2s ease;
+  -webkit-transition: background-color 2s ease;
+  -o-transition: background-color 2s ease;
+  -moz-transition: background-color 2s ease;
+  transition-delay: 1s;
+}
+
+.hideElement {
+  /* todo: Better solution required here */
+  background-color: rgba(225, 225, 225, 0) !important;
 }
