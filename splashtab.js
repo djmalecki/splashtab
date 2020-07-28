@@ -16,6 +16,7 @@ function onLoad() {
 }
 
 async function loadImageAsync(URL) {
+  console.log("SPLASHTAB: splashtab.js: Making request with URL: " + URL);
   var imgRequest = new Request(URL);
   fetch(imgRequest).then(function (response) {
     console.log("SPLASHTAB: splashtab.js: Received image: " + response.url);
@@ -50,7 +51,7 @@ function buildURL() {
   console.log("SPLASHTAB: splashtab.js: Using resolution " + resX + "x" + resY);
   console.log("SPLASHTAB: splashtab.js: Using tags " + tags);
 
-  return "https://source.unsplash.com/random/" + resX + "x" + resY + "/?" + tags;
+  return "https://source.unsplash.com/featured/" + resX + "x" + resY + "/?" + tags;
 }
 
 function fetchTags() {
@@ -61,6 +62,8 @@ function fetchTags() {
   } catch (error) {
     console.log(error);
   }
+
+  tags = tags.toString().toLowerCase().replace(/\s/g, '');
 
   return tags;
 }
