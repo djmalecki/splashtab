@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 
 <html>
+
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="config.css"/>
+  <link rel="stylesheet" href="config.css" />
 </head>
+
 <body>
   <div class="header">
-    <p>Splashtab v0.7</p>
+    <p>Splashtab v0.8</p>
   </div>
-  <label>Custom image resolution:</label>
-  <input type="number" id="resX"> x <input type="number" id="resY">
+  <div>
+    <label>Custom resolution:</label>
+    <input type="number" id="resX"> x <input type="number" id="resY">
+  </div>
+  <br />
+  <div class="full-width">
+    <label class="width30">Custom tags:</label>
+    <input id="tags" class="full-width" type="text">
+  </div>
+
   <p id="saveNotify"></p>
   <script src="config.js"></script>
 </body>
+
 </html>

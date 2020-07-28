@@ -2,6 +2,7 @@ window.onload = onLoad;
 
 function onLoad() {
   var URL = buildURL();
+  var tags = buildTags();
 
   function successCallback(result) {
     // image fade in
@@ -47,4 +48,12 @@ function buildURL() {
   console.log("SPLASHTAB: splashtab.js: Using resolution " + resX + "x" + resY);
 
   return "https://source.unsplash.com/random/" + resX + "x" + resY;
+}
+
+function buildTags() {
+  try {
+    var tags = localStorage.getItem("tags");
+  } catch (error) {
+    console.log(error)
+  }
 }
