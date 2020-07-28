@@ -1,9 +1,10 @@
 body {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  cursor: pointer;
+  margin: 0;
+  overflow: hidden;
+}
+
+#imgContainer {
+  width: 100vw;
 }
 
 #blackCover {

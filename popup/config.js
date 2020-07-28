@@ -2,6 +2,7 @@ window.onload = onLoad;
 
 var resInputX = document.getElementById('resX');
 var resInputY = document.getElementById('resY');
+var tagsInput = document.getElementById('tags');
 
 // onchanged: verify value and call updatechecked
 resInputX.onchange = function() {
@@ -24,6 +25,12 @@ resInputY.onchange = function() {
   }
 }
 
+tagsInput.onchange = function() {
+  localStorage.removeItem("tags");
+  localStorage.setItem("tags", this.value);
+  document.getElementById("saveNotify").innerText = "Preferences saved";
+}
+
 function onLoad() {
   // get custom resolution preferences from localStorage and fill input boxes
 
@@ -32,9 +39,11 @@ function onLoad() {
   try {
     var resPrefX = localStorage.getItem("resPrefX");
     var resPrefY = localStorage.getItem("resPrefY");
+    var tagsPref = localStorage.getItem("tags");
 
     resInputX.value = resPrefX;
     resInputY.value = resPrefY;
+    tagsInput.value = tagsPref;
   }
   catch (err) {
     console.log(err);
