@@ -2,7 +2,6 @@ window.onload = onLoad;
 
 function onLoad() {
   var URL = buildURL();
-  var tags = buildTags();
 
   function successCallback(result) {
     // image fade in
@@ -19,9 +18,10 @@ function onLoad() {
 async function loadImageAsync(URL) {
   var imgRequest = new Request(URL);
   fetch(imgRequest).then(function (response) {
-    console.log(response.url)
-    document.body.style.background = 'url(' + response.url + ') no-repeat center center fixed';
-    document.body.onclick = function () { window.open(response.url, '_blank') };
+    console.log("SPLASHTAB: splashtab.js: Received image: " + response.url);
+    document.getElementById("imgContainer").src = response.url;
+    document.body.onclick = function () { window.open(response.url, '_blank'); };
+    document.body.style.cursor = "pointer";
   });
 }
 
@@ -34,7 +34,7 @@ function buildURL() {
     var resPrefX = localStorage.getItem("resPrefX");
     var resPrefY = localStorage.getItem("resPrefY");
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 
   if (!!resPrefX && !!resPrefY) {
@@ -45,15 +45,22 @@ function buildURL() {
     localStorage.setItem("resPrefY", resY);
   }
 
-  console.log("SPLASHTAB: splashtab.js: Using resolution " + resX + "x" + resY);
+  var tags = fetchTags();
 
-  return "https://source.unsplash.com/random/" + resX + "x" + resY;
+  console.log("SPLASHTAB: splashtab.js: Using resolution " + resX + "x" + resY);
+  console.log("SPLASHTAB: splashtab.js: Using tags " + tags);
+
+  return "https://source.unsplash.com/random/" + resX + "x" + resY + "/?" + tags;
 }
 
-function buildTags() {
+function fetchTags() {
+  var tags = "";
+
   try {
     var tags = localStorage.getItem("tags");
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
+
+  return tags;
 }
