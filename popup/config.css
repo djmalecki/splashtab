@@ -3,8 +3,8 @@ body {
   overflow: auto;
   text-align: center;
   max-width: 28em;
-  background-color: rgb(168, 223, 255);
-  color: rgb(95, 127, 141);
+  background-color: rgb(196, 226, 255);
+  color: rgb(131, 151, 170);
 }
 
 hr {
@@ -61,4 +61,14 @@ hr {
   -webkit-appearance: none;
   margin: 0;
   -moz-appearance: textfield;
+  outline: none;
+  transition: border-color 0.1s ease, box-shadow 0.1s ease;
+  -webkit-transition: border-color 0.1s ease, box-shadow 0.1s ease;
+  -o-transition: border-color 0.1s ease, box-shadow 0.1s ease;
+  -moz-transition: border-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+.input:focus {
+  border-color: rgb(0, 89, 255);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
 }

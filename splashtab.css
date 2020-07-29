@@ -14,10 +14,10 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  transition: background-color 2s ease;
-  -webkit-transition: background-color 2s ease;
-  -o-transition: background-color 2s ease;
-  -moz-transition: background-color 2s ease;
+  transition: background-color 1s ease;
+  -webkit-transition: background-color 1s ease;
+  -o-transition: background-color 1s ease;
+  -moz-transition: background-color 1s ease;
   transition-delay: 1s;
 }
 

@@ -4,8 +4,7 @@ function onLoad() {
   var URL = buildURL();
 
   function successCallback(result) {
-    // image fade in
-    document.getElementById("blackCover").className += "hideElement";
+    console.log("SPLASHTAB: splashtab.js: loadImage success");
   }
 
   function failureCallback(error) {
@@ -23,6 +22,7 @@ async function loadImageAsync(URL) {
     document.getElementById("imgContainer").src = response.url;
     document.body.onclick = function () { window.open(response.url, '_blank'); };
     document.body.style.cursor = "pointer";
+    document.getElementById("blackCover").className += "hideElement";
   });
 }
 
