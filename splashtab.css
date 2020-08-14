@@ -4,7 +4,9 @@ body {
 }
 
 #imgContainer {
+  object-fit: cover;
   width: 100vw;
+  min-height: 100vh;
 }
 
 #blackCover {

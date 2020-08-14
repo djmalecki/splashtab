@@ -2,9 +2,9 @@
 
   "manifest_version": 2,
   "name": "Splashtab",
-  "version": "0.7",
+  "version": "1.0.1",
 
-  "description": "Shows a clean photograph on a new tab",
+  "description": "Fill the new tab page with a random image from unsplash.com",
   "chrome_url_overrides" : {
     "newtab": "splashtab.html"
   },
